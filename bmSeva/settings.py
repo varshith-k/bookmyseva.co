@@ -30,7 +30,7 @@ SECRET_KEY = 'ik+d)qzv8xn5prl06i*(pq38qg4$ag7t&74)y94z!q7^yuq*dm'
 DEBUG = False
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
