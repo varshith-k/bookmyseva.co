@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>BookmySeva.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+<h1>Our Service Providers</h1>
+<h2>These are the services we provide: </h2>
+<ul>
+{% for serv in servs %}
+	<li>{{serv.main_service}}</li>
+{% endfor %}
+</ul>
+<h2>These are the Service Providers: </h2>
+{% for serv in servs %}
+	<li>{{serv.main_service}}</li>
+	<ul>
+		{% for prof in profs %}
+			{% if prof.main_service == serv.main_service %}
+				<li>{{prof.fullname}},{{prof.mobile_number}},{{prof.city}},{{prof.main_service}}</li>
+			{% endif %}
+		{% endfor %}	
+	</ul>
+{% endfor %}
+</body>
+</html>

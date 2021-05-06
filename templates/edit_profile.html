@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	{% load static %}
+  	{% load crispy_forms_tags %}  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--<title>BookmySeva.co</title>-->
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+  </head>
+  <body style="margin: 0%">
+  	{% if user.is_authenticated %}
+  		<form method='POST'>
+  			{% csrf_token %}
+  			{{form.as_p}}
+  			<p><input type='submit'/>  <a href='../'>Cancel</a></p>
+  		</form>
+  	{% else %}
+  		<h1>Oops, we are unable find better results for you at this time. Sorry for the inconvenience.</h1>
+  	{% endif %}
+  </body>
+</html>
